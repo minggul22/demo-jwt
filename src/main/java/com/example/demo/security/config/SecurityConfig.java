@@ -24,7 +24,7 @@ public class SecurityConfig {
         http
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests((authz) -> authz
-                        .requestMatchers("/authenticate").permitAll()
+                        .requestMatchers("/api/auth").permitAll()
                         .anyRequest().authenticated()
                         /*
                             권한 설정을 하자

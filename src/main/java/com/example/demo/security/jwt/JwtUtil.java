@@ -25,7 +25,8 @@ import java.util.stream.Collectors;
 @Component
 public class JwtUtil {
 
-    private SecretKey secretKey = Keys.secretKeyFor(SignatureAlgorithm.HS512); // 실제 환경에서는 보안을 위해 외부에서 가져오는 것이 좋습니다.
+    public static final String AUTHORIZATION_HEADER = "Authorization";
+    private final SecretKey secretKey = Keys.secretKeyFor(SignatureAlgorithm.HS512); // 실제 환경에서는 보안을 위해 외부에서 가져오는 것이 좋습니다.
 
 
     // JWT 발급
